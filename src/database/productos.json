@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1, 
+        "name": "Mouse" 
+    },
+    {
+        "id": 2, 
+        "name": "Teclado" 
+    },
+    {
+        "id": 3, 
+        "name": "Silla" 
+    },
+    {
+        "id": 4, 
+        "name": "Escritorio" 
+    },
+    {
+        "id": 5, 
+        "name": "Monitor" 
+    },
+    {
+        "id": 6, 
+        "name": "Pc" 
+    },
+    {
+        "id": 7, 
+        "name": "Pantalla" 
+    },
+    {
+        "id": 8, 
+        "name": "Portatil" 
+    }
+]
