@@ -5,7 +5,7 @@ import productObject from './products';
 const router = Router();
 
 // Add sub-routes
-router.use(productObject);
+router.use('/v1', productObject);
 
 // Export the base-router
 export default router;
