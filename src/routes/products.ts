@@ -49,4 +49,22 @@ router.get('/cupones', function (req, res) {
     }
 });
 
+//Post endpoint/api/cupones
+router.post('/cupones', function (req, res) {
+    let body = req.body;
+    body.id = cupones[cupones.length - 1].id + 1;
+    try {
+        if (req.headers.auth == 'admin') {
+            return(res.send(body))
+        }
+        else {
+            res.status(401);
+            return res.send("No autorizado");
+        }
+    } catch (error) {
+        res.status(500);
+        return res.send("Error interno");
+    }
+});
+
 export default router;
