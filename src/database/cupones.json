@@ -4,8 +4,8 @@
         "name": "Cupon mouse",
         "description": "Cupon para mouse en diciembre",
         "product_id": 1,
-        "valid_since": 1609864739000,
-        "valid_until": 1609864739000
+        "valid_since": "1996-12-01T00:00:00.000Z",
+        "valid_until": "2996-12-01T00:00:00.000Z"
     },
     {
 
@@ -13,15 +13,15 @@
         "name": "Cupon teclado",
         "description": "Cupon para teclado en diciembre",
         "product_id": 2,
-        "valid_since": 1609864739000,
-        "valid_until": 1609864739000
+        "valid_since": "2596-12-01T00:00:00.000Z",
+        "valid_until": "2996-12-01T00:00:00.000Z"
     },
     {
         "id": 3,
         "name": "Cupon silla",
         "description": "Cupon para silla en diciembre",
         "product_id": 3,
-        "valid_since": 1609864739000,
-        "valid_until": 1609864739000
+        "valid_since": "1996-12-01T00:00:00.000Z",
+        "valid_until": "1999-12-01T00:00:00.000Z"
     }
 ]

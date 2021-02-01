@@ -50,12 +50,36 @@ router.get('/cupones', function (req, res) {
 });
 
 //Post endpoint/api/cupones
-router.post('/cupones', function (req, res) {
+router.post('/cupones/crear', function (req, res) {
     let body = req.body;
     body.id = cupones[cupones.length - 1].id + 1;
     try {
         if (req.headers.auth == 'admin') {
             return(res.send(body))
+        }
+        else {
+            res.status(401);
+            return res.send("No autorizado");
+        }
+    } catch (error) {
+        res.status(500);
+        return res.send("Error interno");
+    }
+});
+
+//Post endpoint/api/cupones/validar
+router.post('/cupones/validar', function (req, res) {
+    let body = req.body;
+    let actualDate = new Date();
+    let cupon = cupones.find(x => x.id == body.id);
+    try {
+        if (req.headers.auth == 'admin') {
+            let dateSince = new Date(cupon.valid_since);
+            let dateUntil = new Date(cupon.valid_until);
+            if(dateSince <= actualDate && dateUntil >= actualDate)
+                return res.send(cupon)
+            else
+                return res.send({});
         }
         else {
             res.status(401);
