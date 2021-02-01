@@ -34,6 +34,9 @@ router.get('/productos', async (req: Request, res: Response) => {
 router.get('/cupones', function (req, res) {
     try {
         if (req.headers.auth == 'admin') {
+            if (req.query.cupon != undefined)
+                return res.send(cupones.find(x => x.id == req.query.cupon));
+            else
                 return res.send(cupones)
         }
         else {
