@@ -30,4 +30,20 @@ router.get('/productos', async (req: Request, res: Response) => {
     }
 });
 
+//Get endpoint/api/cupones || endpoint/api/cupones?cupone=1
+router.get('/cupones', function (req, res) {
+    try {
+        if (req.headers.auth == 'admin') {
+                return res.send(cupones)
+        }
+        else {
+            res.status(401);
+            return res.send("No autorizado");
+        }
+    } catch (error) {
+        res.status(500);
+        return res.send("Error interno");
+    }
+});
+
 export default router;
