@@ -73,7 +73,7 @@ router.post('/cupones/validar', function (req, res) {
     let actualDate = new Date();
     let cupon = cupones.find(x => x.id == body.id);
     try {
-        if (req.headers.auth == 'admin') {
+        if (req.headers.auth == 'customer') {
             let dateSince = new Date(cupon.valid_since);
             let dateUntil = new Date(cupon.valid_until);
             if(dateSince <= actualDate && dateUntil >= actualDate)
